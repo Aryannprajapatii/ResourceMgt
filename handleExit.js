@@ -1,6 +1,7 @@
  import renderUI from "./schema.js";
 
 export default function handleExitbtn(res,idx){
+    // idx se mil gya kon sa user exit pr click kiya hai
      const session = res.activeSession[idx];
 
     // 1. Duration calculate karein (milliseconds se hours mein)
@@ -20,7 +21,7 @@ export default function handleExitbtn(res,idx){
     }
 
     // 4. Resource object mein last bill store karein taaki billCard mein show ho sake
-    res.lastBill = {
+    res.billDetail = {
         userNo: session.userNo,
         startTime: session.time,
         hours: billableHours,

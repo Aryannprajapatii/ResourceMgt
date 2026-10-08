@@ -3,20 +3,19 @@ export default function createBillCard(res){
     billCard.className="billDetail";
 
        let billDetailsHTML = `<p>No bill generated yet.</p>`;
-        if (res.lastBill) {
+        if (res.billDetail) {
             billDetailsHTML = `
-                <p><strong>User No:</strong> ${res.lastBill.userNo}</p>
-                <p><strong>Start Time:</strong> ${res.lastBill.startTime}</p>
-                <p><strong>Exit Time:</strong> ${res.lastBill.exitTime}</p>
-                <p><strong>No. of Hours:</strong> ${res.lastBill.hours} hr(s)</p>
-                <p><strong>Total Bill:</strong> ₹${res.lastBill.bill}</p>
+                <p><strong>User No:</strong> ${res.billDetail.userNo}</p>
+                <p><strong>Start Time:</strong> ${res.billDetail.startTime}</p>
+                <p><strong>Exit Time:</strong> ${res.billDetail.exitTime}</p>
+                <p><strong>No. of Hours:</strong> ${res.billDetail.hours} hr(s)</p>
+                <p><strong>Total Bill:</strong> ₹${res.billDetail.bill}</p>
             `;
         }
 
         billCard.innerHTML = `
-             <h3>Bill detail</h3>
-             <h3>${res.name}</h3>
-             ${billDetailsHTML}
+             <h3>Bill detail of ${res.name}</h3>
+              ${billDetailsHTML}
         `;
 
     return billCard;
