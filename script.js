@@ -1,3 +1,3 @@
- import renderUI from "./schema.js";
+ import renderUI from "./js/schema.js";
 renderUI();
  
